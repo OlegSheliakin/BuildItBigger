@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DisplayJoke</string>
+    <string name="joke_error">Cannot fetch joke.</string>
+</resources>
