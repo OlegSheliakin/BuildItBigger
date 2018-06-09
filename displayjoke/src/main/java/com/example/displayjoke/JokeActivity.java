@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
@@ -25,9 +26,13 @@ public class JokeActivity extends AppCompatActivity {
 
         TextView tvJoke = findViewById(R.id.tvJoke);
 
-        String joke = getIntent().getStringExtra(JOKE_KEY_EXTRA);
+        String joke = null;
+        if (getIntent().hasExtra(JOKE_KEY_EXTRA)) {
+            joke = getIntent().getStringExtra(JOKE_KEY_EXTRA);
 
-        if (joke != null) {
+        }
+
+        if (!TextUtils.isEmpty(joke)) {
             tvJoke.setText(joke);
         } else {
             tvJoke.setTextColor(Color.RED);

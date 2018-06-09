@@ -23,17 +23,6 @@ public class MyEndpoint {
 
     private JokerService joker = new JokerService();
 
-    /**
-     * A simple endpoint method that takes a name and says Hi back
-     */
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
-        MyBean response = new MyBean();
-        response.setData("Hi, " + name);
-
-        return response;
-    }
-
     @ApiMethod(name = "getJoke")
     public Joke getJoke() {
         String joke = joker.getRandomJoke();

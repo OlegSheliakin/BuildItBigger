@@ -23,7 +23,7 @@ import com.udacity.gradle.builditbigger.backend.myApi.model.Joke;
  */
 public class MainActivityFragment extends Fragment implements View.OnClickListener, DownloadJokeTask.DownloadJokeCallback {
 
-    private DownloadJokeTask task = new DownloadJokeTask(this);
+    private DownloadJokeTask task;
 
     private ProgressBar progressBar;
 
@@ -53,7 +53,10 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        task.cancel(true);
+        if (task != null) {
+            task.cancel(true);
+        }
+
         task = new DownloadJokeTask(this);
         task.execute();
 

@@ -35,5 +35,7 @@ public class DownloadJokeTaskTest {
             e.printStackTrace();
         }
         assertNotNull(result);
+        assertNotNull(result.getResult());
+        assertNotNull(result.getResult().getText());
     }
 }
