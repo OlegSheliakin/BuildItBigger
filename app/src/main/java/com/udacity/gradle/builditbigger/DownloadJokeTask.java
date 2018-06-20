@@ -14,7 +14,7 @@ public class DownloadJokeTask extends AsyncTask<Void, Void, AsyncTaskResult<Joke
     private static MyApi myApiService = null;
     private DownloadJokeCallback delegate;
 
-    interface DownloadJokeCallback {
+    public interface DownloadJokeCallback {
         void onSuccess(Joke joke);
 
         void onError(Throwable throwable);
